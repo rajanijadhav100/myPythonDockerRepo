@@ -1,6 +1,12 @@
 # Use the official Python image from the Docker Hub with an Alpine variant
 FROM python:3.9-alpine
 
+# Declare a build argument
+ARG BUILD_VERSION
+
+# Add a label with the build version to change the image content
+LABEL build_version=$BUILD_VERSION
+
 # Set the working directory in the container
 WORKDIR /app
 
